@@ -1,0 +1,11 @@
+version: '3'
+services:
+  orchestrator-alpine:
+    build:
+      context: .
+      dockerfile: orchestrator/docker/Dockerfile
+    image: orchestrator-alpine
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./conf/conf.json:/etc/orchestrator.conf.json
